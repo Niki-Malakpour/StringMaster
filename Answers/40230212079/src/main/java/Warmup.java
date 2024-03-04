@@ -3,6 +3,7 @@ public class Warmup {
     /**
      * Goal : Simple Introduction To Strings
      * In the first function, your inputs are a number and a sentence
+     *
      * @return is the number th word of the sentence
      */
     public String wordFinder(String sentence, int number) {
@@ -14,6 +15,7 @@ public class Warmup {
             return x;
     }
 
+
     /**
      * Goal : Basic introduction to Strings & using foreach
      * @param number        is in String type
@@ -21,7 +23,26 @@ public class Warmup {
      * @return if searchForEven is true ? return the number of even numbers : return the number of odd numbers
      */
     public int oddEvenCounter(String number, boolean searchForEven) {
-        return -1;
+        int c = 0;
+        if(searchForEven) {
+            String numberString = String.valueOf(number);
+            for (int i = 0 ; i < numberString.length() ; i++) {
+                int digit = Character.getNumericValue(numberString.charAt(i));
+                if (digit % 2 == 0) {
+                    c++;
+                }
+            }
+            return c;
+        }else{
+            String numberString = String.valueOf(number);
+            for (int i = 0 ; i < numberString.length() ; i++) {
+                int digit = Character.getNumericValue(numberString.charAt(i));
+                if (digit % 2 == 1) {
+                    c++;
+                }
+            }
+            return c;
+        }
     }
 
     /**
@@ -30,6 +51,14 @@ public class Warmup {
      * @return The word that is first in alphabet column
      */
     public String firstWord(String wordA, String wordB) {
-        return null;
+         String wordALower = wordA.toLowerCase();
+         String wordBLower = wordB.toLowerCase();
+         if (wordALower . compareTo(wordBLower) < 0){
+             return wordA;
+         }else if (wordBLower . compareTo(wordALower) < 0){
+             return wordB ;
+         } else {
+             return "Both words are equal.";
+         }
     }
 }
