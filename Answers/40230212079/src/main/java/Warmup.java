@@ -6,7 +6,12 @@ public class Warmup {
      * @return is the number th word of the sentence
      */
     public String wordFinder(String sentence, int number) {
-        return null;
+        String[] sep = sentence.split(" ");
+        String x = "Number = " + number + " is out Of Bound";
+        if (number > 0 && number <= sep.length)
+            return sep[number - 1];
+        else
+            return x;
     }
 
     /**
